@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gandiv - Your Perfect Hostel Stay</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+      async
+      defer
+    ></script>
+    <!-- EmailJS SDK -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  
+    <style>
+      .facilities-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header role="banner">
+      <nav role="navigation">
+        <div class="logo" role="img" aria-label="Gandiv Logo">
+          <div class="logo-symbol">G</div>
+          <div class="logo-text">
+            <span class="logo-name">GANDIV</span>
+            <span class="logo-tagline">LUXURY HOSTELS</span>
+          </div>
+        </div>
+        <div class="nav-links" role="menubar">
+          <a href="#home" role="menuitem">Home</a>
+          <a href="#facilities" role="menuitem">Facilities</a>
+          <a href="#prices" role="menuitem">Prices</a>
+          <a href="#map" role="menuitem">Map</a>
+          <a href="#reviews" role="menuitem">Reviews</a>
+          <a href="#rules" role="menuitem">House Rules</a>
+          <a href="#info" role="menuitem">Info</a>
+          <button class="login-btn" aria-label="Sign up or Login">Sign up / Login</button>
+          <button class="book-btn" aria-label="Book your stay">Book</button>
+        </div>
+      </nav>
+    </header>
+
+    <main role="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <h1 id="hero-title">Experience Comfort Like Never Before</h1>
+          <p>
+            Your home away from home. Discover peaceful stays with modern
+            amenities.
+          </p>
+          <button class="book-now-btn">Book Now</button>
+        </div>
+      </section>
+
+      <section id="facilities" class="facilities-section" aria-labelledby="facilities-title">
+        <div class="facilities-bg"></div>
+        <div class="container">
+          <h2 id="facilities-title" class="section-title">Our Facilities</h2>
+          <div class="facilities-grid">
+            <!-- Free Section -->
+            <div class="facility-card" data-aos="fade-up">
+              <div class="facility-header">
+                <h3>Free</h3>
+                <hr />
+              </div>
+              <ul class="facility-list">
+                <li>
+                  <div class="facility-content">
+                    <span class="highlight">Parking</span>
+                    <span class="facility-description"
+                      >Secure space for your vehicle</span
+                    >
+                  </div>
+                </li>
+                <li>
+                  <div class="facility-content">
+                    <span class="highlight">WiFi</span>
+                    <span class="facility-description"
+                      >High-speed internet access</span
+                    >
+                  </div>
+                </li>
+                <li>
+                  <div class="facility-content">
+                    <span class="highlight">Bed with Pillow</span>
+                    <span class="facility-description"
+                      >Comfortable sleeping arrangement</span
+                    >
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Services Section -->
+            <div class="facility-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="facility-header">
+                <h3>Services</h3>
+                <hr />
+              </div>
+              <ul class="facility-list">
+                <li>
+                  <div class="facility-content">
+                    <span class="highlight">Room Cleaning</span>
+                    <span class="facility-description"
+                      >Daily housekeeping service</span
+                    >
+                  </div>
+                </li>
+                <li>
+                  <div class="facility-content">
+                    <span class="highlight">Laundry</span>
+                    <span class="facility-description"
+                      >Professional washing & ironing</span
+                    >
+                  </div>
+                </li>
+                <li>
+                  <div class="facility-content">
+                    <span class="highlight">Postal Service</span>
+                    <span class="facility-description"
+                      >Mail handling & delivery</span
+                    >
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Entertainment Section -->
+            <div class="facility-card" data-aos="fade-up" data-aos-delay="200">
+              <div class="facility-header">
+                <h3>Entertainment</h3>
+                <hr />
+              </div>
+              <ul class="facility-list">
+                <li>
+                  <div class="facility-content">
+                    <span class="highlight">Internet Access</span>
+                    <span class="facility-description"
+                      >Fast & reliable connectivity</span
+                    >
+                  </div>
+                </li>
+                <li>
+                  <div class="facility-content">
+                    <span class="highlight">TV</span>
+                    <span class="facility-description"
+                      >HD television with premium channels</span
+                    >
+                  </div>
+                </li>
+                <li>
+                  <div class="facility-content">
+                    <span class="highlight">Indoor Games</span>
+                    <span class="facility-description"
+                      >Chess, Carrom's & more</span
+                    >
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Food & Drinks Section -->
+            <div class="facility-card" data-aos="fade-up" data-aos-delay="300">
+              <div class="facility-header">
+                <h3>Food & Drinks</h3>
+                <hr />
+              </div>
+              <ul class="facility-list">
+                <li>
+                  <div class="facility-content">
+                    <span class="highlight">Breakfast</span>
+                    <span class="facility-description"
+                      >7:00 AM to 10:00 AM</span
+                    >
+                  </div>
+                </li>
+                <li>
+                  <div class="facility-content">
+                    <span class="highlight">Lunch</span>
+                    <span class="facility-description"
+                      >12:00 PM to 2:00 PM</span
+                    >
+                  </div>
+                </li>
+                <li>
+                  <div class="facility-content">
+                    <span class="highlight">Evening Snacks</span>
+                    <span class="facility-description">5:00 PM to 6:00 PM</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="facility-content">
+                    <span class="highlight">Dinner</span>
+                    <span class="facility-description"
+                      >8:00 PM to 10:00 PM</span
+                    >
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Bedroom Section -->
+            <div class="facility-card" data-aos="fade-up" data-aos-delay="400">
+              <div class="facility-header">
+                <h3>Bedroom</h3>
+                <hr />
+              </div>
+              <ul class="facility-list">
+                <li>
+                  <div class="facility-content">
+                    <span class="highlight">Linen Included</span>
+                    <span class="facility-description"
+                      >Fresh, clean bedding provided</span
+                    >
+                  </div>
+                </li>
+                <li>
+                  <div class="facility-content">
+                    <span class="highlight">Air Conditioning</span>
+                    <span class="facility-description"
+                      >Temperature controlled comfort</span
+                    >
+                  </div>
+                </li>
+                <li>
+                  <div class="facility-content">
+                    <span class="highlight">Ceiling Fan</span>
+                    <span class="facility-description"
+                      >Additional cooling option available</span
+                    >
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Safety & Security Section -->
+            <div class="facility-card" data-aos="fade-up" data-aos-delay="500">
+              <div class="facility-header">
+                <h3>Safety & Security</h3>
+                <hr />
+              </div>
+              <ul class="facility-list">
+                <li>
+                  <div class="facility-content">
+                    <span class="highlight">Safe Deposit Box</span>
+                    <span class="facility-description"
+                      >Secure storage for your valuables</span
+                    >
+                  </div>
+                </li>
+                <li>
+                  <div class="facility-content">
+                    <span class="highlight">24/7 Security</span>
+                    <span class="facility-description"
+                      >Round-the-clock surveillance</span
+                    >
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="rooms" class="rooms-section">
+        <div class="container">
+          <h2 class="section-title" data-aos="fade-up">Our Rooms</h2>
+          <button onclick="openBookingModal()" class="book-btn">
+            Quick Book
+          </button>
+          <div class="rooms-grid">
+            <!-- Single Room -->
+            <div class="room-card" data-aos="fade-up">
+              <img
+                src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="Single Room"
+                class="room-image"
+                onerror="this.src='https://placehold.co/600x400/png?text=Single+Room'"
+              />
+              <div class="room-info">
+                <h3>Cozy Single Room</h3>
+                <p class="room-price">₹599<span>/night</span></p>
+                <ul class="room-amenities">
+                  <li><i class="fas fa-bed"></i> Single Bed</li>
+                  <li><i class="fas fa-shower"></i> Shared Bathroom</li>
+                  <li><i class="fas fa-wifi"></i> Free WiFi</li>
+                  <li><i class="fas fa-fan"></i> Air Conditioning</li>
+                </ul>
+                <button class="book-now-btn" onclick="openBookingModal()">Book Now</button>
+              </div>
+            </div>
+
+            <!-- Double Room -->
+            <div class="room-card" data-aos="fade-up" data-aos-delay="100">
+              <img
+                src="https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="Double Room"
+                class="room-image"
+                onerror="this.src='https://placehold.co/600x400/png?text=Double+Room'"
+              />
+              <div class="room-info">
+                <h3>Deluxe Double Room</h3>
+                <p class="room-price">₹999<span>/night</span></p>
+                <ul class="room-amenities">
+                  <li><i class="fas fa-bed"></i> Double Bed</li>
+                  <li><i class="fas fa-bath"></i> Private Bathroom</li>
+                  <li><i class="fas fa-wifi"></i> Free WiFi</li>
+                  <li><i class="fas fa-tv"></i> Smart TV</li>
+                  <li><i class="fas fa-fan"></i> Air Conditioning</li>
+                </ul>
+                <button class="book-now-btn" onclick="openBookingModal()">Book Now</button>
+              </div>
+            </div>
+
+            <!-- Dormitory Room -->
+            <div class="room-card" data-aos="fade-up" data-aos-delay="200">
+              <img
+                src="https://images.pexels.com/photos/2631746/pexels-photo-2631746.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="Dormitory Room"
+                class="room-image"
+                onerror="this.src='https://placehold.co/600x400/png?text=Dormitory+Room'"
+              />
+              <div class="room-info">
+                <h3>6-Bed Dormitory</h3>
+                <p class="room-price">₹399<span>/night</span></p>
+                <ul class="room-amenities">
+                  <li><i class="fas fa-bed"></i> Bunk Bed</li>
+                  <li><i class="fas fa-shower"></i> Shared Bathroom</li>
+                  <li><i class="fas fa-wifi"></i> Free WiFi</li>
+                  <li><i class="fas fa-lock"></i> Personal Locker</li>
+                  <li><i class="fas fa-fan"></i> Air Conditioning</li>
+                </ul>
+                <button class="book-now-btn" onclick="openBookingModal()">Book Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Booking Modal -->
+      <div class="booking-modal" id="bookingModal">
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <h2 class="modal-title">Book Your Stay</h2>
+          <div class="booking-progress">
+            <div class="progress-step active">1. Details</div>
+            <div class="progress-step">2. Review</div>
+            <div class="progress-step">3. Confirm</div>
+          </div>
+          <form id="bookingForm" class="booking-form" novalidate>
+            <div class="form-grid">
+              <!-- Personal Information -->
+              <div class="form-section">
+                <h3>Personal Information</h3>
+                <div class="form-group">
+                  <label for="bookingName">Full Name *</label>
+                  <input
+                    type="text"
+                    id="bookingName"
+                    name="name"
+                    required
+                    pattern="^[a-zA-Z ]{2,50}$"
+                    placeholder="Enter your full name"
+                    data-error="Please enter a valid name (2-50 characters, letters only)"
+                  />
+                  <div class="error-message"></div>
+                </div>
+                <div class="form-group">
+                  <label for="bookingEmail">Email Address *</label>
+                  <input
+                    type="email"
+                    id="bookingEmail"
+                    name="email"
+                    required
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                    placeholder="Enter your email"
+                    data-error="Please enter a valid email address"
+                  />
+                  <div class="error-message"></div>
+                </div>
+                <div class="form-group">
+                  <label for="bookingPhone">Phone Number *</label>
+                  <input
+                    type="tel"
+                    id="bookingPhone"
+                    name="phone"
+                    required
+                    pattern="^[0-9]{10}$"
+                    placeholder="Enter your 10-digit phone number"
+                    data-error="Please enter a valid 10-digit phone number"
+                  />
+                  <div class="error-message"></div>
+                </div>
+              </div>
+
+              <!-- Booking Details -->
+              <div class="form-section">
+                <h3>Booking Details</h3>
+                <div class="form-group">
+                  <label for="bookingCheckIn">Check-in Date *</label>
+                  <input
+                    type="date"
+                    id="bookingCheckIn"
+                    name="checkIn"
+                    required
+                    data-error="Please select a check-in date"
+                  />
+                  <div class="error-message"></div>
+                </div>
+                <div class="form-group">
+                  <label for="bookingCheckOut">Check-out Date *</label>
+                  <input
+                    type="date"
+                    id="bookingCheckOut"
+                    name="checkOut"
+                    required
+                    data-error="Please select a check-out date"
+                  />
+                  <div class="error-message"></div>
+                </div>
+                <div class="form-group">
+                  <label for="bookingRoomType">Room Type *</label>
+                  <select
+                    id="bookingRoomType"
+                    name="roomType"
+                    required
+                    data-error="Please select a room type"
+                  >
+                    <option value="">Select a room type</option>
+                    <option value="single">Single Room - ₹599/night</option>
+                    <option value="double">Double Room - ₹999/night</option>
+                    <option value="dormitory">
+                      Dormitory Bed - ₹399/night
+                    </option>
+                  </select>
+                  <div class="error-message"></div>
+                </div>
+                <div class="form-group">
+                  <label for="bookingGuests">Number of Guests *</label>
+                  <select
+                    id="bookingGuests"
+                    name="guests"
+                    required
+                    data-error="Please select number of guests"
+                  >
+                    <option value="">Select number of guests</option>
+                    <option value="1">1 Guest</option>
+                    <option value="2">2 Guests</option>
+                    <option value="3">3 Guests</option>
+                    <option value="4">4 Guests</option>
+                  </select>
+                  <div class="error-message"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Additional Requests -->
+            <div class="form-section">
+              <h3>Additional Requests</h3>
+              <div class="form-group">
+                <label for="bookingRequests">Special Requests (Optional)</label>
+                <textarea
+                  id="bookingRequests"
+                  name="requests"
+                  rows="3"
+                  placeholder="Any special requests or requirements?"
+                  maxlength="500"
+                ></textarea>
+                <div class="char-count">0/500</div>
+              </div>
+            </div>
+
+            <!-- Booking Summary -->
+            <div class="booking-summary" style="display: none">
+              <h3>Booking Summary</h3>
+              <div class="summary-content"></div>
+              <div class="total-price"></div>
+            </div>
+
+            <!-- Terms and Conditions -->
+            <div class="form-group terms-group">
+              <input
+                type="checkbox"
+                id="bookingTerms"
+                name="terms"
+                required
+                data-error="Please agree to the terms and conditions"
+              />
+              <label for="bookingTerms"
+                >I agree to the terms and conditions *</label
+              >
+              <div class="error-message"></div>
+            </div>
+
+            <button type="submit" class="submit-booking">
+              Confirm Booking
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <section id="contact" class="contact-section">
+        <div class="container">
+          <h2 class="section-title" data-aos="fade-up">Contact Us</h2>
+          <div class="contact-container">
+            <form class="contact-form" data-aos="fade-right" id="contactForm">
+              <div class="form-group">
+                <input type="text" id="name" name="name" required />
+                <label for="name">Your Name</label>
+              </div>
+              <div class="form-group">
+                <input type="email" id="email" name="email" required />
+                <label for="email">Your Email</label>
+              </div>
+              <div class="form-group">
+                <textarea id="message" name="message" required></textarea>
+                <label for="message">Your Message</label>
+              </div>
+              <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
